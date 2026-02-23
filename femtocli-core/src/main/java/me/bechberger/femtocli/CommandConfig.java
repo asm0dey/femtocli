@@ -47,19 +47,19 @@ public class CommandConfig {
         return c;
     }
 
-    boolean effectiveEmptyLineAfterUsage(Command cmd) {
+    public boolean effectiveEmptyLineAfterUsage(Command cmd) {
         return emptyLineAfterUsage || (cmd != null && cmd.emptyLineAfterUsage());
     }
 
-    boolean effectiveEmptyLineAfterDescription(Command cmd) {
+    public boolean effectiveEmptyLineAfterDescription(Command cmd) {
         return emptyLineAfterDescription || (cmd != null && cmd.emptyLineAfterDescription());
     }
 
-    boolean effectiveMixinStandardHelpOptions(Command cmd) {
+    public boolean effectiveMixinStandardHelpOptions(Command cmd) {
         return mixinStandardHelpOptions || (cmd != null && cmd.mixinStandardHelpOptions());
     }
 
-    boolean effectiveShowDefaultValuesInHelp(Command cmd) {
+    public boolean effectiveShowDefaultValuesInHelp(Command cmd) {
         if (cmd == null) return showDefaultValuesInHelp;
         return switch (cmd.showDefaultValuesInHelp()) {
             case ENABLE -> true;
@@ -68,16 +68,16 @@ public class CommandConfig {
         };
     }
 
-    String effectiveDefaultValueHelpTemplate() {
+    public String effectiveDefaultValueHelpTemplate() {
         return (defaultValueHelpTemplate == null || defaultValueHelpTemplate.isBlank())
                 ? DEFAULT_TEMPLATE : defaultValueHelpTemplate;
     }
 
-    boolean effectiveDefaultValueOnNewLine() {
+    public boolean effectiveDefaultValueOnNewLine() {
         return defaultValueOnNewLine;
     }
 
-    String effectiveVersion(Command cmd) {
+    public String effectiveVersion(Command cmd) {
         if (cmd != null && !cmd.version().isBlank()) return cmd.version();
         return version == null ? "" : version;
     }

@@ -1046,7 +1046,7 @@ public final class FemtoCli {
         return enumCandidates(type, null, ", ");
     }
 
-    static String enumCandidates(Class<?> type, me.bechberger.femtocli.annotations.Option opt) {
+    static String enumCandidates(Class<?> type, Option opt) {
         return enumCandidates(type, opt, ", ");
     }
 
@@ -1055,7 +1055,7 @@ public final class FemtoCli {
      * If opt is provided and showEnumDescriptions is true, includes descriptions from getDescription() method.
      * Uses the provided joiner to separate enum values (defaults to ", ").
      */
-    static String enumCandidates(Class<?> type, me.bechberger.femtocli.annotations.Option opt, String joiner) {
+    static String enumCandidates(Class<?> type, Option opt, String joiner) {
         if (type == null || !type.isEnum()) return "";
         Object[] constants = type.getEnumConstants();
         if (constants == null || constants.length == 0) return "";

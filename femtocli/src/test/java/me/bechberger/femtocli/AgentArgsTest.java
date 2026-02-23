@@ -2,6 +2,7 @@ package me.bechberger.femtocli;
 
 import me.bechberger.femtocli.annotations.Command;
 import me.bechberger.femtocli.annotations.Option;
+import me.bechberger.femtocli.annotations.Parameters;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.Callable;
@@ -61,7 +62,7 @@ class AgentArgsTest {
 
     @Command(name = "pos", description = "Positional", mixinStandardHelpOptions = true)
     static class Positional implements Callable<Integer> {
-        @me.bechberger.femtocli.annotations.Parameters(description = "value")
+        @Parameters(description = "value")
         String value;
 
         @Override

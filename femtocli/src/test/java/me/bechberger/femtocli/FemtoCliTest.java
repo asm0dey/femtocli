@@ -1113,16 +1113,16 @@ class FemtoCliTest {
 
     @Test
     void hiddenOptionsAreOmittedFromUsageSynopsis() {
-        @me.bechberger.femtocli.annotations.Command(
+        @Command(
                 name = "hidden-usage",
                 description = "Test hidden options in usage",
                 mixinStandardHelpOptions = true
         )
         class HiddenUsageCmd implements Runnable {
-            @me.bechberger.femtocli.annotations.Option(names = "--shown", description = "Shown")
+            @Option(names = "--shown", description = "Shown")
             String shown;
 
-            @me.bechberger.femtocli.annotations.Option(names = "--secret", hidden = true, description = "Hidden")
+            @Option(names = "--secret", hidden = true, description = "Hidden")
             String secret;
 
             @Override

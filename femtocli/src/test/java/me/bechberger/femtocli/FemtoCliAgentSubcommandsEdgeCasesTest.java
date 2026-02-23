@@ -2,6 +2,7 @@ package me.bechberger.femtocli;
 
 import me.bechberger.femtocli.annotations.Command;
 import me.bechberger.femtocli.annotations.Option;
+import me.bechberger.femtocli.annotations.Parameters;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.Callable;
@@ -62,7 +63,7 @@ class FemtoCliAgentSubcommandsEdgeCasesTest {
 
     @Command(name = "methodroot", description = "Root with method subcommands", mixinStandardHelpOptions = true)
     static class MethodRoot implements Runnable {
-        @me.bechberger.femtocli.annotations.Parameters
+        @Parameters
         String v;
 
         String value;
